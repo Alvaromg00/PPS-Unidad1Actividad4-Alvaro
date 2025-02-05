@@ -21,4 +21,4 @@ Algunas de las opciones mas comunes que nos permiten crear sandboxes son:
 
 ## Creando entorno controlado y probando la calculadora
 
-Para esta prueba vamos a utilizar Firejail que es 
+Para esta prueba vamos a utilizar Firejail que es un
