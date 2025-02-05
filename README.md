@@ -21,4 +21,21 @@ Algunas de las opciones mas comunes que nos permiten crear sandboxes son:
 
 ## Creando entorno controlado y probando la calculadora
 
-Para esta prueba vamos a utilizar Firejail que es un
+Para esta prueba vamos a utilizar `Firejail` que es una herramienta de sandboxing fácil de usar, y vamos a probar nuestra calculadora creada en ejercicios anteriores:
+
+1. Lo primero es descargarnos el paquete .deb del repositorio de Debian:
+
+[wget http://ftp.us.debian.org/debian/pool/main/f/firejail/firejail_0.9.72-2_amd64.deb](./Imagenes/1.png)
+
+2. Una vez descargado, lo instalamos manualmente con `dpkg -i` :
+
+[sudo dpkg -i firejail_0.9.72-2_amd64.deb](./Imagenes/2.png)
+
+3. Ahora vamos a hacer pruebas en la **calculadora.py** dentro del entorno de Firejail, para ello nos movemos a la ruta donde se encuentra nuestra **calculadora.py** y desde hay ejecutamos `firejail python3 calculadora.py` entonces comenzará a ejecutarse la calculadora.py en el entorno de Firejail:
+
+[firejail python3 calculadora.py](./Imagenes/3.png)
+
+4. Una vez echo esto ya podemos probar el programa en un entorno controlado:
+
+[Pruebas calculadora.py 1](./Imagenes/4.png)
+[Pruebas calculadora.py 2](./Imagenes/5.png)
