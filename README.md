@@ -21,21 +21,33 @@ Algunas de las opciones mas comunes que nos permiten crear sandboxes son:
 
 ## Creando entorno controlado y probando la calculadora
 
-Para esta prueba vamos a utilizar `Firejail` que es una herramienta de sandboxing fácil de usar, y vamos a probar nuestra calculadora creada en ejercicios anteriores:
+Para esta prueba vamos a utilizar `Firejail` con entorno gráfico que es una herramienta de sandboxing fácil de usar, y vamos a probar nuestra calculadora creada en ejercicios anteriores, todo ello en Ubuntu:
 
-1. Lo primero es descargarnos el paquete .deb del repositorio de Debian:
+1. Lo primero es descargarnos `Firetools` que es el paquete de herramientas de Firejail, lo descargamos desde la tienda oficial de Ubuntu :
 
-![wget http://ftp.us.debian.org/debian/pool/main/f/firejail/firejail_0.9.72-2_amd64.deb](./Imagenes/1.png)
+![Instalando Firetools](./Imagenes/1.PNG)
 
-2. Una vez descargado, lo instalamos manualmente con `dpkg -i` :
+2. Una vez descargado, ya podemos abrirlo e indicarlo que nos abra una sandbox sobre el emulador de terminal de Konsole y, a continuación, le indicamos que vamos a ejecutar en konsole el fichero calculadora.py:
 
-![sudo dpkg -i firejail_0.9.72-2_amd64.deb](./Imagenes/2.png)
+![Abriendo Firetools](./Imagenes/2.PNG)
 
-3. Ahora vamos a hacer pruebas en la **calculadora.py** dentro del entorno de Firejail, para ello nos movemos a la ruta donde se encuentra nuestra **calculadora.py** y desde hay ejecutamos `firejail python3 calculadora.py` entonces comenzará a ejecutarse la calculadora.py en el entorno de Firejail:
+3. En el siguiente apartado activamos la opción de *'sandbox monitoring and statistics'* para que cuando estemos ejecutando el sandbox nos ofrezca herramientas de monintorización y la damos a Done:
 
-![firejail python3 calculadora.py](./Imagenes/3.png)
+![Activando monitorización](./Imagenes/3.PNG)
 
-4. Una vez echo esto ya podemos probar el programa en un entorno controlado:
+4. Una vez echo esto ya se nos ejecuta 'Konsole' y podemos probar la calculadora, al lado derecho nos aparece un cuadro indicando el proceso de la ejecución, la memoria, el porcentaje de cpu consumida, etc:
 
-![Pruebas calculadora.py 1](./Imagenes/4.png)
-![Pruebas calculadora.py 2](./Imagenes/5.png)
+![Ejecutando calculadora.py](./Imagenes/4.PNG)
+
+5. Si hacemos click en el número del proceso se nos desplega otro menu con estadísticas mas visuales, como la cpu y la memoria que consume en un gráfico ademas de otros datos, para ir consultando mientras realizamos pruebas en nuestro programa:
+
+![Viendo estadísticas](./Imagenes/5.PNG)
+
+6. Las estadísticas y datos que nos ofrece Firetools respecto al programa que estamos ejecutando son muchas por ejemplo, en el apartado de "File Manager" podemos ver todos los archivos que se han creado para la ejecución, algunos de ellos temporales:
+
+![Firetools (File Manager)](./Imagenes/6.PNG)
+
+7. También podemos consultar el arbol de procesos que se han ido ejecutando pulsando en el apartado de "Process Tree":
+
+![Firetools (Process Tree)](./Imagenes/7.PNG)
+
